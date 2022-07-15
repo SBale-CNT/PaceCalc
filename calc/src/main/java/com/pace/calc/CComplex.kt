@@ -6,31 +6,39 @@ import kotlinx.coroutines.delay
 class CComplex(val cb: Callback) {
 
     private val secs = 1000L
-    fun add(a: Int, b: Int) {
+    fun add(a: Int, b: Int, delay: Long = secs) {
         XCoroutines.default {
-            delay(10 * secs)
-            cb.addResult(a + b)
+            delay(delay)
+            XCoroutines.main {
+                cb.addResult(a + b)
+            }
         }
     }
 
-    fun sub(a: Int, b: Int) {
+    fun sub(a: Int, b: Int, delay: Long = secs) {
         XCoroutines.default {
-            delay(3 * secs)
-            cb.subResult(a - b)
+            delay(delay)
+            XCoroutines.main {
+                cb.subResult(a - b)
+            }
         }
     }
 
-    fun mul(a: Int, b: Int) {
+    fun mul(a: Int, b: Int, delay: Long = secs) {
         XCoroutines.default {
-            delay(5 * secs)
-            cb.mulResult(a * b.toDouble())
+            delay(delay)
+            XCoroutines.main {
+                cb.mulResult(a * b.toDouble())
+            }
         }
     }
 
-    fun div(a: Int, b: Int) {
+    fun div(a: Int, b: Int, delay: Long = secs) {
         XCoroutines.default {
-            delay(2 * secs)
-            cb.divResult(a / b.toFloat())
+            delay(delay)
+            XCoroutines.main {
+                cb.divResult(a / b.toFloat())
+            }
         }
     }
 
