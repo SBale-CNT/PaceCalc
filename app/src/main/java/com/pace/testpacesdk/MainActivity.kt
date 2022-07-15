@@ -46,9 +46,9 @@ class MainActivity : Activity() {
         }
 
         val cc = CComplex(callback)
-        cc.add(40, 10)
-        cc.sub(40, 10)
-        cc.mul(40, 10)
-        cc.div(40, 10)
+        cc.add(40, 10, 15000)
+        cc.sub(40, 10, 5000)
+        cc.mul(40, 10, 10000)
+        cc.div(40, 10, 3000)
     }
 }
